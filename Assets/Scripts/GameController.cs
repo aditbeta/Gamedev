@@ -4,16 +4,16 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	public GameObject pickup;
+	//public GameObject player;
 	public Vector3 spawnValues;
-
-	private float lifetime = 5.0f;
+	private float lifetime = 10.0f;
 	
 	void Start() {
-		InvokeRepeating("Spawn", 0.0f, 6.0f);
+		InvokeRepeating("Spawn", 0.0f, 11.0f);
 	}
 
 	void Spawn() {
-		for (int i = 0; i < 12; i++)
+		for (int i = 0; i < 5; i++)
 			SpawnPickup();
 	}
 
@@ -23,4 +23,10 @@ public class GameController : MonoBehaviour {
 		Destroy (Instantiate (pickup, spawnPosition, spawnRotation), lifetime);
 	}
 
+/*	public void SpawnAtPosition() {
+		Vector3 spawnPosition = new Vector3 (player.transform.position.x, player.transform.position.y, player.transform.position.z);
+		Quaternion spawnRotation = Quaternion.identity;
+		Destroy (Instantiate (pickup, spawnPosition, spawnRotation), lifetime);
+	}
+*/
 }
